@@ -20,20 +20,20 @@ class Main {
 class Editor {
   private content: string;
 
-  createState(): EditorState {
-    return new EditorState(this.content);
-  }
-
-  restore(state: EditorState): void {
-    this.content = state.getContent();
-  }
-
   getContent(): string {
     return this.content;
   }
 
   setContent(content: string): void {
     this.content = content;
+  }
+
+  createState(): EditorState {
+    return new EditorState(this.content);
+  }
+
+  restore(state: EditorState): void {
+    this.content = state.getContent();
   }
 }
 
@@ -54,7 +54,7 @@ class History {
 
   push(state: EditorState): void {
     this.states.push(state);
-  };
+  }
 
   pop(): EditorState {
     return this.states.pop();
