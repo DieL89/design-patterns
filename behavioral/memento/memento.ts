@@ -18,7 +18,7 @@ class Main {
 }
 
 class Editor {
-  content: string;
+  private content: string;
 
   createState(): EditorState {
     return new EditorState(this.content);
@@ -50,7 +50,7 @@ class EditorState {
 }
 
 class History {
-  states: EditorState[] = [];
+  private states: EditorState[] = [];
 
   push(state: EditorState): void {
     this.states.push(state);
